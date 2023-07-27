@@ -1,0 +1,89 @@
+.vegitable-market{
+    margin: 4rem 6rem;
+}
+
+.vegitable-market h1{
+    font-size: 3rem;
+}
+
+.extra{
+    margin-top: 20px;
+}
+
+.first-desc{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem;
+}
+
+.first-desc-reverse{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem;
+}
+
+.desc-text{
+    width: 45%;
+    text-align: start;
+    font-size: 1.1rem;
+}
+
+.desc-text h2{
+    padding-bottom: 1rem;
+}
+
+.image{
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    z-index: -99;
+}
+
+.image img{
+    width: 49%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: -1px 1px 60px -20px rgba(0,0,0,0.19);
+}
+
+.image img:nth-child(2){
+    position: absolute;
+    top: -10%;
+    right: 0;
+}
+
+@media screen and (max-width:850px) {
+    .vegitable-market{
+        margin: 4rem 2rem;
+    }
+
+    .first-desc{
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 2rem;
+    }
+
+    .first-desc-reverse{
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 2rem;
+    }
+
+    .desc-text{
+        width: 100%;
+    }
+
+    .image{
+        width: 100%;
+        margin: 1.5rem 0;
+    }
+
+    .image img{
+        height: 250px;
+    }
+}
