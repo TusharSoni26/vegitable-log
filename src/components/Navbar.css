@@ -23,7 +23,7 @@
 
 .nav-menu{
     display: grid;
-    grid-template-columns: repeat(7, auto);
+    grid-template-columns: repeat(6, auto);
     grid-gap: 10px;
     list-style: none;
     align-items: center;
@@ -49,10 +49,6 @@
     transition: all 0.2s ease-in-out;
 }
 
-.nav-links-mobile{
-    display: none;
-    white-space: nowrap;
-}
 
 .menu-icons{
     display: none;
@@ -116,17 +112,12 @@ button:hover{
     }
 
     button{
-        display: none;
-        white-space: nowrap;
-    }
-
-    .nav-links-mobile{
         display: block;
         text-align: center;
         padding: 1.5rem;
         margin-top: auto;
         border-radius: 5px;
-        width: 80%;
+        width: 100%;
         background-color: #01959a;
         text-decoration: none;
         color: #fff;

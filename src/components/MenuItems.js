@@ -28,10 +28,5 @@ export const MenuItems = [
         url : "/cart",
         cName : "nav-links",
         icon : "fa-solid fa-cart-shopping"
-    },
-    {
-        title : "Sign Up",
-        url : "/signup",
-        cName : "nav-links-mobile",
     }
 ]

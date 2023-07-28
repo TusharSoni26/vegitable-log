@@ -2,15 +2,6 @@ import "./Vegitable.css"
 
 import React from 'react'
 import VegitablesData from "./VegitablesData"
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-const responsive = {
-  desktop: {
-    breakpoint: {max:3000, min:1024},
-    item: 3
-  }
-}
 
 const Vegitables = () => {
   return (

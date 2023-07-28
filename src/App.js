@@ -1,7 +1,6 @@
 import "./styles.css"
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
 import Home from './routes/Home'
 import Services from './routes/Services'
 import Cart from './routes/Cart'
