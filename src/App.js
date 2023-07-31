@@ -6,6 +6,7 @@ import Services from './routes/Services'
 import Cart from './routes/Cart'
 import About from './routes/About'
 import Contact from './routes/Contact'
+import Signin from "./routes/Signin"
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />}/>
         <Route path='/service' element={<Services />}/>
         <Route path='/cart' element={<Cart />}/>
+        <Route path='/auth' element={<Signin />}/>
       </Routes>
     </div>
   )
