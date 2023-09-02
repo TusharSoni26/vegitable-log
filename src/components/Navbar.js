@@ -1,45 +1,58 @@
-import { Component } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuItems } from "./MenuItems";
 import "./Navbar.css"
 
 import React from 'react'
+import ProfileLogo from "./ProfileLogo";
 
-class Navbar extends Component {
-    state = { clicked: false };
-    handleclick = () => {
-        this.setState({ clicked: !this.state.clicked })
+
+const Navbar = () => {
+    const [isAuth, setIsAuth] = useState(false);
+    const [state, setState] = useState(false);
+
+    const handleclick = () => {
+        setState(!state)
     }
-    render() {
-        return (
-            <nav className="NavbarItems">
-                <div className="navbar-logo">
-                <img className="nav-img" src="images/logo.jpeg" alt="logo"/>
-                </div>
 
-                <div className="menu-icons" onClick={this.handleclick}>
-                    <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
-                </div>
+    
+    useEffect(() => {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        setIsAuth(isLoggedIn === "true");
+    })
 
-                <ul className={this.state.clicked? "nav-menu active":"nav-menu"}>
-                    {MenuItems.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <Link className={item.cName} to={item.url}>
-                                    <i className={item.icon}>
-                                    </i>
-                                    {item.title}
-                                </Link>
-                            </li>
-                        )
-                    })}
-                    <Link to="/auth">
-                        <button className="nav-btn">Sign Up</button>
-                    </Link>
-                </ul>
-            </nav>
-        );
-    }
+
+    return (
+        <nav className="NavbarItems">
+            <Link className="navbar-logo" to="/">
+                <img className="nav-img" src="images/logo.jpeg" alt="logo" />
+            </Link>
+
+            <div className="menu-icons" onClick={handleclick}>
+                <i className={state ? "fas fa-times" : "fas fa-bars"}></i>
+            </div>
+
+            <ul className={state ? "nav-menu active" : "nav-menu"}>
+                {MenuItems.map((item, index) => {
+                    return (
+                        <li key={index}>
+                            <Link className={item.cName} to={item.url}>
+                                <i className={item.icon}>
+                                </i>
+                                {item.title}
+                            </Link>
+                        </li>
+                    )
+                })}
+
+                {(isAuth)? <ProfileLogo /> : <Link to="/auth"><button className="nav-btn">Sign Up </button></Link>
+                }
+
+            </ul>
+        </nav>
+    );
 }
+
+
 
 export default Navbar;
