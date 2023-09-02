@@ -7,6 +7,8 @@ import Cart from './routes/Cart'
 import About from './routes/About'
 import Contact from './routes/Contact'
 import Signin from "./routes/Signin"
+import Catalouge from "./routes/Catalouge"
+import Error from "./components/Error"
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Route path='/service' element={<Services />}/>
         <Route path='/cart' element={<Cart />}/>
         <Route path='/auth' element={<Signin />}/>
+        <Route path='/catalouge' element={<Catalouge />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
     </div>
   )
