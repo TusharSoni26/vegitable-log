@@ -2,6 +2,7 @@
     padding: 4rem 6rem;
     background-color: #000;
     color: #fff;
+    z-index: -1;
 }
 
 .top{
