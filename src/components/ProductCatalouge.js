@@ -24,7 +24,7 @@ const ProductCatalouge = () => {
 
   async function getProductData() {
     setLoading(true);
-    await fetch("/seller/products", {
+    await fetch("https://veggies-xzv7.onrender.com/seller/products", {
       method: "GET",
       headers: {
       },
@@ -58,7 +58,7 @@ const ProductCatalouge = () => {
     };
 
     // console.log(filterData);
-    await fetch("/seller/products/filter", {
+    await fetch("https://veggies-xzv7.onrender.com/seller/products/filter", {
       method:"POST",
           headers:{'content-type':'application/json'},
           body:JSON.stringify(filterrrData)
