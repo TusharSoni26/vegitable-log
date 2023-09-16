@@ -8,6 +8,8 @@ import About from './routes/About'
 import Contact from './routes/Contact'
 import Signin from "./routes/Signin"
 import Catalouge from "./routes/Catalouge"
+import Orders from "./routes/Orders"
+import Payment from "./routes/Payment"
 import Error from "./components/Error"
 
 const App = () => {
@@ -21,6 +23,8 @@ const App = () => {
         <Route path='/cart' element={<Cart />}/>
         <Route path='/auth' element={<Signin />}/>
         <Route path='/catalouge' element={<Catalouge />} />
+        <Route path='/orders' element={<Orders />} />
+        <Route path='/Payment' element={<Payment />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </div>

@@ -1,0 +1,18 @@
+.order-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+    background: rgb(248, 239, 239);
+}
+
+.order-show-product{
+    width: 100%;
+    margin: 0px 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.order-container h1{
+    font-size: 40px;
+}

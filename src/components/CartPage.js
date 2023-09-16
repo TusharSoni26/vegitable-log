@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import CartProduct from "./CartProduct";
 import Spinner from "./Spinner";
 import "./CartPage.css"
+import { computeHeadingLevel } from '@testing-library/react';
+import { useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
   const [cartData, setCartData] = useState();
   const [loading, setLoading] = useState(true);
   const [amount, setAmount] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getCartData();
@@ -14,7 +17,7 @@ const CartPage = () => {
 
   async function getCartData() {
     const userEmail = localStorage.getItem("userEmail");
-    const url = "/customer/cart/" + userEmail;
+    const url = "https://veggies-xzv7.onrender.com/customer/cart/" + userEmail;
     try {
       const response = await fetch(url, {
         method: "GET",
@@ -42,6 +45,35 @@ const CartPage = () => {
       console.error(error);
       setLoading(false);
     }
+  }
+
+  const handlereq = async(data) => {
+    // console.log(data);
+    let res = await fetch("/customer/order", {
+      // mode: 'no-cors',
+      method:"POST",
+      headers:{'content-type':'application/json'},
+      body:JSON.stringify(data)
+    });
+
+    if(res.status == 200){
+      console.log("order successs");
+    }
+  }
+
+  const handleCheckout = async() => {
+    {cartData.map((item, index) => {
+      const data = {"email_customer": localStorage.getItem("userEmail"),
+      "email_seller" : item.email_seller,
+      "name":item.name,
+      "Quantity": item.quantity,
+      "price" : item.price
+    };
+    handlereq(data);
+
+    })}
+
+    navigate("/payment");
   }
 
   const handleQuantityChange = (newAmount) => {
@@ -91,7 +123,7 @@ const CartPage = () => {
         </span>
         <hr />
 
-        <button className='checkout-button'>Proceed to Buy</button>
+        <button className='checkout-button' onClick={handleCheckout}>Proceed to Buy</button>
       </div>
     </div>
   )

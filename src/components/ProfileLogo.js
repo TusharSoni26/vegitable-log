@@ -4,10 +4,17 @@ import "./ProfileLogo.css"
 
 const ProfileLogo = () => {
     const [click, setClick] = useState(false);
+    const [userName, setUserName] = useState("");
     const navigate = useNavigate();
 
     function handleClick(){
         setClick(!click);
+        setUserName(localStorage.getItem("userName"));
+        console.log(userName);
+    }
+
+    function handleOrderPage(){
+      navigate("/orders");
     }
 
     function handleLogout(){
@@ -23,9 +30,14 @@ const ProfileLogo = () => {
         <div className='sub-menu'>
             <div className='user-info'>
                 <img src='images/my_pic.jpeg' className='user-pic' />
-                <h2>Tushar Soni</h2>
+                <h2>{userName}</h2>
             </div>
             <hr />
+            <div className='sub-menu-link' onClick={handleOrderPage}>
+                <i class="fa-solid fa-key"></i>
+                <p>Your Orders</p>
+                <span>{'>'}</span>
+            </div>
             <div className='sub-menu-link'>
                 <i class="fa-solid fa-key"></i>
                 <p>Update Password</p>

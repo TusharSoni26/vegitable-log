@@ -11,9 +11,24 @@ const Auth = () => {
   const [loading, setLoading] = useState(true);
   const [clicked, setClicked] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [uName, setUName] = useState("");
   const navigate = useNavigate();
 
   var strClass = "form-group";
+  const findName = async() => {
+    const url = "/customer/details/" + localStorage.getItem("userEmail");
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {}
+    });
+// console.log(url)
+    if (response.ok) {
+      
+    const data = await response.json();
+    localStorage.setItem("userName", data.name);
+    // console.log(data);
+    }
+  }
 
   const switchMode = (e) => {
     e.preventDefault();
@@ -46,6 +61,7 @@ const Auth = () => {
           setLoading(false);
           localStorage.setItem("isLoggedIn", true);
           localStorage.setItem("userEmail", allFormValue.email);
+          localStorage.setItem("userName", allFormValue.name);
           navigate('/');
         }
         else{
@@ -70,6 +86,8 @@ const Auth = () => {
           setLoading(false);
           localStorage.setItem("isLoggedIn", true);
           localStorage.setItem("userEmail", allFormValue.email);
+
+          findName();
           navigate('/');
         }
         else{
