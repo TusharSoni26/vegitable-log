@@ -46,7 +46,7 @@ const Auth = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     setClicked(true);
-    const allFormValue = {"name": form.fullName, "email":form.email, "password":form.password, "conformPassword":form.conformPassword}
+    const allFormValue = {"name": form.fullName, "email":form.email, "password":form.password, "confirmPassword":form.confirmPassword}
 
     if(isSignUp){
       try{
@@ -136,7 +136,7 @@ const Auth = () => {
           {
             isSignUp && (
               <div className='form-group'>
-                <input name='conformPassword' className='form-input' type="password" onChange={handleChange}/>
+                <input name='confirmPassword' className='form-input' type="password" onChange={handleChange}/>
                 <label>Confirm Password*</label>
               </div>
             )
