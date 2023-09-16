@@ -16,7 +16,7 @@ const Auth = () => {
 
   var strClass = "form-group";
   const findName = async() => {
-    const url = "/customer/details/" + localStorage.getItem("userEmail");
+    const url = "https://veggies-xzv7.onrender.com/customer/details/" + localStorage.getItem("userEmail");
     const response = await fetch(url, {
       method: "GET",
       headers: {}
@@ -50,7 +50,7 @@ const Auth = () => {
 
     if(isSignUp){
       try{
-        let res = await fetch("/customer/register", {
+        let res = await fetch("https://veggies-xzv7.onrender.com/customer/register", {
           // mode: 'no-cors',
           method:"POST",
           headers:{'content-type':'application/json'},
@@ -75,7 +75,7 @@ const Auth = () => {
       const loginFormValue = {"email":form.email, "password":form.password}
       // console.log(loginFormValue);
       try{
-        let res = await fetch("/customer/login", {
+        let res = await fetch("https://veggies-xzv7.onrender.com/customer/login", {
           // mode: 'no-cors',
           method:"POST",
           headers:{'content-type':'application/json'},

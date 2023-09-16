@@ -49,7 +49,7 @@ const CartPage = () => {
 
   const handlereq = async(data) => {
     // console.log(data);
-    let res = await fetch("/customer/order", {
+    let res = await fetch("https://veggies-xzv7.onrender.com/customer/order", {
       // mode: 'no-cors',
       method:"POST",
       headers:{'content-type':'application/json'},
