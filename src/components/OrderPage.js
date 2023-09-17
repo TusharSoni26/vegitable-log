@@ -14,7 +14,7 @@ const OrderPage = () => {
 
   async function getOrderData() {
     const userEmail = localStorage.getItem("userEmail");
-    const url = "/customer/orderDetails/" + userEmail;
+    const url = "https://veggies-xzv7.onrender.com/customer/orderDetails/" + userEmail;
     console.log(url)
     try {
       const response = await fetch(url, {

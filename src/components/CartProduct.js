@@ -24,7 +24,7 @@ const CartProduct = (props) => {
         const removeData = {"email":localStorage.userEmail, "name":props.title};
         console.log(removeData);
 
-        let res = fetch("/customer/deleteCart", {
+        let res = fetch("https://veggies-xzv7.onrender.com/customer/deleteCart", {
             // mode: 'no-cors',
             method: "POST",
             headers: { 'content-type': 'application/json' },
