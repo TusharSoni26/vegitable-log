@@ -50,6 +50,7 @@ const Auth = () => {
 
     if(isSignUp){
       try{
+        console.log(allFormValue);
         let res = await fetch("https://veggies-xzv7.onrender.com/customer/register", {
           // mode: 'no-cors',
           method:"POST",

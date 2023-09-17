@@ -1,11 +1,12 @@
 import React from 'react'
 import "./OrderProduct.css"
+import { ImageUrl } from './ImageUrl'
 
 const OrderProduct = (props) => {
     return (
         <div className='order-product-container'>
             <div className='order-product-image'>
-                <img src={"images/" + props.title + ".jpg"} className="" />
+                <img src={ImageUrl[props.title]} className="" />
             </div>
             <div className='order-product-info'>
                 <h1 className='order-pro-title'>{props.title}</h1>

@@ -75,6 +75,24 @@ const CartPage = () => {
     }
   }
 
+  const handleRemoveCart = async(data) => {
+    const removeData = {"email":localStorage.userEmail, "name":data.title};
+        console.log(removeData);
+
+        let res = await fetch("/customer/deleteCart", {
+            // mode: 'no-cors',
+            method: "POST",
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(removeData)
+        });
+        // window.location.reload();
+        // console.log(res.status)
+        // console.log(res.message)
+        if(res.status == 200){
+            console.log("delete from cart success");
+        }
+  }
+
   const handleCheckout = async() => {
     localStorage.setItem("totalAmount", "Rs "+amount);
     {cartData.map((item, index) => {
@@ -86,6 +104,7 @@ const CartPage = () => {
     };
     handlereq(data);
     handleUpdateQuant(data);
+    handleRemoveCart(data);
 
     })}
 

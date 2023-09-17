@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import "./Product.css"
+import { ImageUrl } from "./ImageUrl";
+
 
 const Product = (props) => {
     const [quantity, setQuantity] = useState(0);
     const [cartItems, setCartItems] = useState([]);
+    const [pName, setPName] = useState(props.title);
     function decrement() {
         if (quantity > 0) {
             setQuantity(quantity - 1);
@@ -42,7 +45,7 @@ const Product = (props) => {
     return (
         <div className='product-container'>
             <div className='product-image'>
-                <img src={"images/" + props.title + ".jpg"} className="" />
+                <img src={ImageUrl[props.title]} className="" />
             </div>
             <h1 id='pro-title'>{props.title}</h1>
             <p id='pro-desc'>{props.desc}</p>
@@ -56,5 +59,6 @@ const Product = (props) => {
         </div>
     )
 }
+// {"images/" + props.title + ".jpg"}
 
 export default Product

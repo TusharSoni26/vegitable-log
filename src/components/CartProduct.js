@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { ImageUrl } from './ImageUrl';
 import "./CartProduct.css"
 
 const CartProduct = (props) => {
@@ -39,7 +40,7 @@ const CartProduct = (props) => {
     return (
         <div className='cart-product-container'>
             <div className='cart-product-image'>
-                <img src={"images/" + props.title + ".jpg"} className="" />
+                <img src={ImageUrl[props.title]} className="" />
             </div>
             <div className='cart-product-info'>
                 <h1 className='cart-pro-title'>{props.title}</h1>
