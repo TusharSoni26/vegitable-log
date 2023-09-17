@@ -25,7 +25,7 @@ const Product = (props) => {
         };
         setCartItems([...cartItems, productData]);
 
-        let res = await fetch("/customer/addCart", {
+        let res = await fetch("https://veggies-xzv7.onrender.com/customer/addCart", {
             // mode: 'no-cors',
             method: "POST",
             headers: { 'content-type': 'application/json' },
