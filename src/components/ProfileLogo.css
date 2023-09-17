@@ -1,8 +1,15 @@
 .user-pic{
     width: 50px;
+    height: 30px;
+    background-color: rgb(189 234 241);
     border-radius: 50%;
     cursor: pointer;
     margin-left: 0px;
+    padding-top: 20px;
+}
+
+.user-pic i{
+    padding-top: 2px;
 }
 
 .sub-menu-wrap{
@@ -48,8 +55,9 @@
     align-items: center;
 }
 
-.user-info h3{
-    font-weight: 500;
+.user-info h2{
+    font-weight: 600;
+    padding-left: 8px;
 }
 
 .user-info img{
@@ -78,6 +86,7 @@
 .sub-menu-link p{
     width: 100%;
     text-align: left;
+    font-weight: 600;
 }
 
 .sub-menu-link:hover p{

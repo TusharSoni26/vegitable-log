@@ -5,7 +5,7 @@ const OrderProduct = (props) => {
     return (
         <div className='order-product-container'>
             <div className='order-product-image'>
-                <img src="images/img1.jpg" className="" />
+                <img src={"images/" + props.title + ".jpg"} className="" />
             </div>
             <div className='order-product-info'>
                 <h1 className='order-pro-title'>{props.title}</h1>

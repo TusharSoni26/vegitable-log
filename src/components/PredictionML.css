@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,700&display=swap');
+
+.predict-h1{
+    text-align: center;
+    font-size: 3rem;
+    color:rgb(18, 14, 250);
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+.predict-h2{
+    text-align: center;
+    font-size: 2rem;
+    color:rgb(158, 49, 247);
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+.container-predict{
+    margin-top: 8rem;
+    width:32rem;
+    height:28rem;
+    padding-top: 20px;
+    background-color: rgb(73, 205, 245);
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.outer-predict{
+    /* background-image: url(C:\Users\tayal\OneDrive\Desktop\mlmodelgui\pricePredictorGUI-main\src\images\banner.jpg); */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.hello-predict{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 20px;
+    width: 30rem;
+    border: 3px solid rgb(250, 251, 250);
+    padding: 10px;
+    color: rgb(36, 27, 27);
+    border-radius: 5px;
+    background-color:rgb(115, 171, 255);
+}
+.main-predict{
+    display: flex;
+    flex-direction: column;
+}
+.col-predict{
+    margin:5px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn-predict{
+    margin: 2rem;
+    margin-right: 70px;
+    background-color: rgba(75, 45, 245, 0.308);
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+
+    width:14rem;
+    height:3rem;
+    border:none;
+    border-radius: 5px;
+    font-size: 1rem;;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(178, 243, 145);
+    
+}
+select{
+    width:15rem;
+    height:2rem;
+    border:none;
+    border-radius: 5px;
+}
+.white{
+    background-color: white;
+    
+}
+
+.cont-span{
+    width: 70%;
+    text-align: left;
+    font-weight: 600;
+}

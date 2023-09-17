@@ -18,6 +18,12 @@ export const MenuItems = [
         icon : "fa-solid fa-address-book"
     },
     {
+        title : "Predictor",
+        url : "/prediction",
+        cName : "nav-links",
+        icon : "fa-solid fa-brain"
+    },
+    {
         title : "Cart",
         url : "/cart",
         cName : "nav-links",

@@ -95,6 +95,7 @@ export default class PayCard extends React.Component {
                     variant="outlined"
                     type="text"
                     name="name"
+                    value={localStorage.getItem("totalAmount")}
                     className="form-control"
                     placeholder="Amount"
                     required

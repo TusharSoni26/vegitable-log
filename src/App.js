@@ -10,6 +10,7 @@ import Signin from "./routes/Signin"
 import Catalouge from "./routes/Catalouge"
 import Orders from "./routes/Orders"
 import Payment from "./routes/Payment"
+import Prediction from "./routes/Prediction"
 import Error from "./components/Error"
 
 const App = () => {
@@ -24,7 +25,8 @@ const App = () => {
         <Route path='/auth' element={<Signin />}/>
         <Route path='/catalouge' element={<Catalouge />} />
         <Route path='/orders' element={<Orders />} />
-        <Route path='/Payment' element={<Payment />} />
+        <Route path='/payment' element={<Payment />} />
+        <Route path='/prediction' element={<Prediction />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </div>

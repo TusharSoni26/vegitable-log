@@ -14,15 +14,16 @@ const OrderPage = () => {
 
   async function getOrderData() {
     const userEmail = localStorage.getItem("userEmail");
-    const url = "customer/orderDetails/" + userEmail;
+    const url = "/customer/orderDetails/" + userEmail;
+    console.log(url)
     try {
       const response = await fetch(url, {
         method: "GET",
         headers: {}
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch cart data");
+      if (response.ok) {
+        console.log("done")
       }
 
       const data = await response.json();
